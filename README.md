@@ -13,7 +13,7 @@ Deploy this Ruby on Rails application easily with [Northflank](https://www.north
 
 
 ### Live Demo
-[https://port.ruby-on-rails-example.examples.northflank.northflank.app](https://port.ruby-on-rails-example.examples.northflank.northflank.app)
+[https://port--ruby-on-rails-example--examples--northflank.northflank.app](https://port--ruby-on-rails-example--examples--northflank.northflank.app)
 
 
 ## About Rails
