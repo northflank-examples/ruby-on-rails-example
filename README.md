@@ -8,12 +8,12 @@ Deploy this Ruby on Rails application easily with [Northflank](https://www.north
 
 - Clone this repository
 - Select this repository in Northflank when creating a new service
-- Expose port 3000 as **Public HTTP**
+- Expose port **80** with the option **Public HTTP**
 - Wait for the app to build and visit the newly assigned URL. That's it!
 
 
 ### Live Demo
-[https://port--ruby-on-rails-example--examples--nort-xjjq.code.run](https://port--ruby-on-rails-example--examples--nort-xjjq.code.run)
+[https://example--ruby-on-rails--examples--nort-kcwl.code.run](https://example--ruby-on-rails--examples--nort-kcwl.code.run)
 
 
 ## About Rails
