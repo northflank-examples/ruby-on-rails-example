@@ -5,8 +5,8 @@ ARG BUILD_PACKAGES="build-base curl-dev git"
 ARG DEV_PACKAGES="sqlite-dev yaml-dev zlib-dev nodejs yarn"
 ARG RUBY_PACKAGES="tzdata"
 
-ENV RAILS_ENV=production
-ENV NODE_ENV=production
+ENV RAILS_ENV=development
+ENV NODE_ENV=development
 
 ENV BUNDLE_APP_CONFIG="$RAILS_ROOT/.bundle"
 WORKDIR $RAILS_ROOT
