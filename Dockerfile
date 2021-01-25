@@ -58,5 +58,5 @@ USER app
 
 COPY --from=Builder --chown=app:app $RAILS_ROOT $RAILS_ROOT
 
-EXPOSE 80
-CMD ["bin/rails", "server", "-p", "80"]
+EXPOSE 3000
+CMD ["bin/rails", "server", "-b", "0.0.0.0"]
