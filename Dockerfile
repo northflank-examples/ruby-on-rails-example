@@ -4,6 +4,7 @@ ARG RAILS_ROOT=/app
 ARG BUILD_PACKAGES="build-base curl-dev git"
 ARG DEV_PACKAGES="sqlite-dev yaml-dev zlib-dev nodejs yarn"
 ARG RUBY_PACKAGES="tzdata"
+ARG SECRET_KEY_BASE
 
 ENV RAILS_ENV=production
 ENV NODE_ENV=production
