@@ -6,9 +6,6 @@ ARG DEV_PACKAGES="sqlite-dev yaml-dev zlib-dev nodejs yarn"
 ARG RUBY_PACKAGES="tzdata"
 ARG SECRET_KEY_BASE
 
-ENV RAILS_ENV=production
-ENV NODE_ENV=production
-
 ENV BUNDLE_APP_CONFIG="$RAILS_ROOT/.bundle"
 WORKDIR $RAILS_ROOT
 
@@ -27,7 +24,7 @@ RUN bundle config --global frozen 1 \
     && find vendor/bundle/ruby/3.0.0/gems/ -name "*.c" -delete \
     && find vendor/bundle/ruby/3.0.0/gems/ -name "*.o" -delete
     
-RUN yarn install --production
+RUN yarn install
 COPY . .
 
 RUN bin/rails webpacker:compile
@@ -42,7 +39,6 @@ RUN rm -rf node_modules tmp/cache vendor/assets spec
 FROM ruby:3.0.0-alpine
 ARG RAILS_ROOT=/app
 ARG PACKAGES="tzdata sqlite sqlite-dev nodejs bash"
-ENV RAILS_ENV=production
 ENV BUNDLE_APP_CONFIG="$RAILS_ROOT/.bundle"
 WORKDIR $RAILS_ROOT
 
