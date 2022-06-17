@@ -16,8 +16,8 @@ RUN apk update \
 COPY Gemfile* package.json yarn.lock ./
 
 # Install rubygem
-COPY Gemfile Gemfile.lock $RAILS_ROOT/
-RUN bundle config --global frozen 1 \
+COPY Gemfile* $RAILS_ROOT/
+RUN bundle config --global frozen 0 \
     && bundle install --without development:test:assets -j4 --retry 3 --path=vendor/bundle \
     # Remove unneeded files (cached *.gem, *.o, *.c)
     && rm -rf vendor/bundle/ruby/3.0.0/cache/*.gem \
