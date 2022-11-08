@@ -1,4 +1,4 @@
-FROM ruby:3.0.0-alpine AS Builder
+FROM ruby:3.1.2-alpine AS Builder
 
 ARG RAILS_ROOT=/app
 ARG BUILD_PACKAGES="build-base curl-dev git"
@@ -20,10 +20,10 @@ COPY Gemfile* $RAILS_ROOT/
 RUN bundle config --global frozen 0 \
     && bundle install --without development:test:assets -j4 --retry 3 --path=vendor/bundle \
     # Remove unneeded files (cached *.gem, *.o, *.c)
-    && rm -rf vendor/bundle/ruby/3.0.0/cache/*.gem \
-    && find vendor/bundle/ruby/3.0.0/gems/ -name "*.c" -delete \
-    && find vendor/bundle/ruby/3.0.0/gems/ -name "*.o" -delete
-    
+    && rm -rf vendor/bundle/ruby/3.1.2/cache/*.gem \
+    && find vendor/bundle/ruby/3.1.2/gems/ -name "*.c" -delete \
+    && find vendor/bundle/ruby/3.1.2/gems/ -name "*.o" -delete
+
 RUN yarn install
 COPY . .
 
@@ -36,7 +36,7 @@ RUN rm -rf node_modules tmp/cache vendor/assets spec
 # Build step complete.
 
 
-FROM ruby:3.0.0-alpine
+FROM ruby:3.1.2-alpine
 ARG RAILS_ROOT=/app
 ARG PACKAGES="tzdata sqlite sqlite-dev nodejs bash"
 ENV BUNDLE_APP_CONFIG="$RAILS_ROOT/.bundle"
