@@ -18,17 +18,11 @@ COPY Gemfile* package.json yarn.lock ./
 # Install rubygem
 COPY Gemfile* $RAILS_ROOT/
 RUN bundle config --global frozen 0 \
-    && bundle install --without development:test:assets -j4 --retry 3 --path=vendor/bundle \
-    # Remove unneeded files (cached *.gem, *.o, *.c)
-    && rm -rf vendor/bundle/ruby/3.1.2/cache/*.gem \
-    && find vendor/bundle/ruby/3.1.2/gems/ -name "*.c" -delete \
-    && find vendor/bundle/ruby/3.1.2/gems/ -name "*.o" -delete
+    && bundle install --without development:test:assets -j4 --retry 3 --path=vendor/bundle
 
-RUN yarn install
 COPY . .
 
-RUN bin/rails webpacker:compile
-RUN bin/rails assets:precompile
+RUN bin/rails assets:clobber && bundle exec rails assets:precompile
 
 # Remove folders not needed in resulting image
 RUN rm -rf node_modules tmp/cache vendor/assets spec
@@ -40,6 +34,7 @@ FROM ruby:3.1.2-alpine
 ARG RAILS_ROOT=/app
 ARG PACKAGES="tzdata sqlite sqlite-dev nodejs bash"
 ENV BUNDLE_APP_CONFIG="$RAILS_ROOT/.bundle"
+ENV APPLICATION_HOSTS=".code.run"
 WORKDIR $RAILS_ROOT
 
 # install packages

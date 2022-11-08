@@ -57,4 +57,10 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  # Get allowed hosts from environment variable
+  if ENV["APPLICATION_HOSTS"].present?
+     config.hosts = ENV["APPLICATION_HOSTS"]
+  end
+
 end
