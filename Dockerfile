@@ -34,7 +34,6 @@ FROM ruby:3.1.2-alpine
 ARG RAILS_ROOT=/app
 ARG PACKAGES="tzdata sqlite sqlite-dev nodejs bash"
 ENV BUNDLE_APP_CONFIG="$RAILS_ROOT/.bundle"
-ENV APPLICATION_HOSTS=".code.run"
 WORKDIR $RAILS_ROOT
 
 # install packages

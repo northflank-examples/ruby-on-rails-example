@@ -12,9 +12,9 @@ Alternatively you can:
 - Select this repository in Northflank when creating a new service
 - Wait for the app to build and visit the newly assigned URL. That's it!
 
-### Authorizing hosts
+#### Authorizing hosts
 
-This application has been configured to [authorize hosts](https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization) passed via the environment variable `APPLICATION_HOSTS`. This variable is set to `.code.run` in the Dockerfile to allow all Northflank-generated subdomains by default. You can change this, if necessary, by setting the environment variable. It is recommended you authorize only your specific domain if deploying to production.
+This application has been configured to [authorize hosts](https://guides.rubyonrails.org/configuring.html#actiondispatch-hostauthorization) passed via the environment variable `NF_HOSTS`. You can change this, if necessary, by manually setting the environment variable or changing `config.hosts` in the Ruby environments in `config/environments`.
 
 ### Live Demo
 [https://example--ruby-on-rails--examples--nort-kcwl.code.run](https://example--ruby-on-rails--examples--nort-kcwl.code.run)

@@ -69,8 +69,8 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   # Get allowed hosts from environment variable
-  if ENV["APPLICATION_HOSTS"].present?
-     config.hosts = ENV["APPLICATION_HOSTS"]
+  if ENV["NF_HOSTS"].present?
+     config.hosts = ENV["NF_HOSTS"]
   end
 
 end

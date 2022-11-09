@@ -92,8 +92,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Get allowed hosts from environment variable
-  if ENV["APPLICATION_HOSTS"].present?
-     config.hosts = ENV["APPLICATION_HOSTS"]
+  if ENV["NF_HOSTS"].present?
+     config.hosts = ENV["NF_HOSTS"]
   end
 
 end
