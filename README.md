@@ -1,4 +1,4 @@
-# Northflank Ruby on Rails Example
+# Northflank Ruby on Rails template
 
 <a target="_blank" rel="noopener noreferrer" href="https://www.northflank.com">
     <img alt="Northflank" align="right" src="/media/logo.svg" width="35%" />
@@ -18,7 +18,6 @@ This application has been configured to [authorize hosts](https://guides.rubyonr
 
 ### Live Demo
 [https://example--ruby-on-rails--examples--nort-kcwl.code.run](https://example--ruby-on-rails--examples--nort-kcwl.code.run)
-
 
 ## About Rails
 [Ruby on Rails](https://rubyonrails.org/), or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages.
