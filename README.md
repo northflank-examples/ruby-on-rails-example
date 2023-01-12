@@ -19,10 +19,6 @@ This application has been configured to [authorize hosts](https://guides.rubyonr
 ### Live Demo
 [https://example--ruby-on-rails--examples--nort-kcwl.code.run](https://example--ruby-on-rails--examples--nort-kcwl.code.run)
 
-#### Versions
-
-You can specify the migration version in the command with `VERSION=<your version>`, or set `VERSION` as an [environment variable](https://northflank.com/docs/v1/application/run/inject-runtime-variables).
-
 ## About Rails
 [Ruby on Rails](https://rubyonrails.org/), or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages.
 
