@@ -1,4 +1,4 @@
-# Northflank Ruby on Rails Example
+# Northflank Ruby on Rails template
 
 <a target="_blank" rel="noopener noreferrer" href="https://www.northflank.com">
     <img alt="Northflank" align="right" src="/media/logo.svg" width="35%" />
