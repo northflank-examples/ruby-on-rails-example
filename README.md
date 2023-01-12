@@ -4,13 +4,13 @@
     <img alt="Northflank" align="right" src="/media/logo.svg" width="35%" />
 </a>
 
-Deploy this example easily on [Northflank](https://www.northflank.com) by selecting the Ruby on Rails template when creating a new service.
-
-Alternatively you can:
-
-- Clone this repository to your Git account
-- Select this repository in Northflank when creating a new service
+- [Create a service from template on Northflank](https://app.northflank.com/s/project/create/template-service)
+- Select the Ruby on Rails template
 - Wait for the app to build and visit the newly assigned URL. That's it!
+
+You can now clone your repository locally and start making changes. Push your changes to automatically build and deploy the updated application!
+
+[Learn more about using Northflank](https://northflank.com/docs/).
 
 #### Authorizing hosts
 
