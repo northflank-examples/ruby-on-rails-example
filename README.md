@@ -19,7 +19,7 @@ Deploy this Ruby on Rails application easily with [Northflank](https://www.north
 ## About Rails
 [Ruby on Rails](https://rubyonrails.org/), or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages.
 
-This example project was boostrapped using Rails version 6.1.1 running on Ruby version 3.0.0.
+This example project was bootstrapped using Rails version 6.1.1 running on Ruby version 3.0.0.
 
 ## Quick start 🚀
 
