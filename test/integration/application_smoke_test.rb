@@ -6,8 +6,10 @@ class ApplicationSmokeTest < ActionDispatch::IntegrationTest
     get "/robots.txt"
     assert_response :success
 
-    get "/404.html"
-    assert_response :success
+    %w[/400.html /404.html /422.html /500.html].each do |page|
+      get page
+      assert_response :success
+    end
   end
 
   test "unknown routes raise instead of rendering error pages in test" do
