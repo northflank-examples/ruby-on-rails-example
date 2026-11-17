@@ -13,12 +13,12 @@ WORKDIR $RAILS_ROOT
 RUN apk update \
     && apk upgrade \
     && apk add --update --no-cache $BUILD_PACKAGES $DEV_PACKAGES $RUBY_PACKAGES
-COPY Gemfile* package.json yarn.lock ./
-
 # Install rubygem
 COPY Gemfile* $RAILS_ROOT/
-RUN bundle config --global frozen 0 \
-    && bundle install --without development:test:assets -j4 --retry 3 --path=vendor/bundle
+RUN bundle config set --global frozen false \
+    && bundle config set --local without "development test assets" \
+    && bundle config set --local path vendor/bundle \
+    && bundle install -j4 --retry 3
 
 COPY . .
 
