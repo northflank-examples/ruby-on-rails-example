@@ -22,17 +22,17 @@ This application has been configured to [authorize hosts](https://guides.rubyonr
 ## About Rails
 [Ruby on Rails](https://rubyonrails.org/), or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages.
 
-This example project uses Rails version 7.0.4 running on Ruby version 3.1.2.
+This example project uses Rails version 8.1.4.1 running on Ruby version 4.0.9.
 
 ## Quick start 🚀
 
-To follow this quick start, first install [Ruby version 3.1.2](https://www.ruby-lang.org/en/documentation/installation/). You can also use [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/) to manage your Ruby installations (recommended).
+To follow this quick start, first install [Ruby version 4.0.9](https://www.ruby-lang.org/en/documentation/installation/). You can also use [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/) to manage your Ruby installations (recommended).
 
 
-1.  **Install Rails version 7.0.4.**
+1.  **Install Rails version 8.1.4.1.**
 
     ```shell
-    gem install rails --version 7.0.4
+    gem install rails --version 8.1.4.1
     ```
 
 1.  **Install packages.**

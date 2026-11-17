@@ -1,4 +1,4 @@
-FROM ruby:3.1.2-alpine AS Builder
+FROM ruby:4.0.9-alpine AS Builder
 
 ARG RAILS_ROOT=/app
 ARG BUILD_PACKAGES="build-base curl-dev git"
@@ -13,12 +13,12 @@ WORKDIR $RAILS_ROOT
 RUN apk update \
     && apk upgrade \
     && apk add --update --no-cache $BUILD_PACKAGES $DEV_PACKAGES $RUBY_PACKAGES
-COPY Gemfile* package.json yarn.lock ./
-
 # Install rubygem
 COPY Gemfile* $RAILS_ROOT/
-RUN bundle config --global frozen 0 \
-    && bundle install --without development:test:assets -j4 --retry 3 --path=vendor/bundle
+RUN bundle config set --global frozen false \
+    && bundle config set --local without "development test assets" \
+    && bundle config set --local path vendor/bundle \
+    && bundle install -j4 --retry 3
 
 COPY . .
 
@@ -30,7 +30,7 @@ RUN rm -rf node_modules tmp/cache vendor/assets spec
 # Build step complete.
 
 
-FROM ruby:3.1.2-alpine
+FROM ruby:4.0.9-alpine
 ARG RAILS_ROOT=/app
 ARG PACKAGES="tzdata sqlite sqlite-dev nodejs bash"
 ENV BUNDLE_APP_CONFIG="$RAILS_ROOT/.bundle"
