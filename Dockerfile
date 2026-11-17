@@ -1,4 +1,4 @@
-FROM ruby:3.1.2-alpine AS Builder
+FROM ruby:3.3.13-alpine AS Builder
 
 ARG RAILS_ROOT=/app
 ARG BUILD_PACKAGES="build-base curl-dev git"
@@ -30,7 +30,7 @@ RUN rm -rf node_modules tmp/cache vendor/assets spec
 # Build step complete.
 
 
-FROM ruby:3.1.2-alpine
+FROM ruby:3.3.13-alpine
 ARG RAILS_ROOT=/app
 ARG PACKAGES="tzdata sqlite sqlite-dev nodejs bash"
 ENV BUNDLE_APP_CONFIG="$RAILS_ROOT/.bundle"
